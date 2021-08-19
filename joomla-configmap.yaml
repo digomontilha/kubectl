@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: joomla
+data:
+  JOOMLA_DB_HOST: mariadb:3306
+  JOOMLA_DB_USER: root
+  JOOMLA_DB_PASSWORD: q1w2e3r4
+  JOOMLA_DB_NAME: joomla

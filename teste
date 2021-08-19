@@ -1,0 +1,5 @@
+wsl --set-version ubutu 2
+
+wsl --set-version <distribution name> <versionNumber>
+
+wsl --set-version Ubuntu-20.04 2

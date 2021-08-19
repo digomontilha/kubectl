@@ -1,0 +1,32 @@
+        apiVersion: v1
+        kind: ReplicationController
+        metadata:
+          name: "joomla-rc"
+          namespace: default
+        spec:
+          selector:
+            app: "joomla"
+          template:
+            metadata:
+              labels:
+                app: "joomla"
+            spec:
+              containers:
+              - name: "mariadb"
+                image: mariadb:5
+                env:
+                - name: MYSQL_ROOT_PASSWORD
+                  value: password
+                ports:
+                - containerPort: 3306
+              - name: "joomla"
+                image: joomla
+                env:
+                - name: JOOMLA_DB_HOST
+                  value: 127.0.0.1
+                - name: JOOMLA_DB_PASSWORD
+                  value: password
+                ports:
+                - containerPort: 80
+                
+             
